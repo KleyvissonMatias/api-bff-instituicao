@@ -1,0 +1,2 @@
+server="mongodb+srv://user:root@cluster0.d65pt.mongodb.net/instituicao?retryWrites=true&w=majority"
+database="instituicao"
