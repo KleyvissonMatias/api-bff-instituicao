@@ -37,7 +37,7 @@ func GetByID(w http.ResponseWriter, request *http.Request) {
 	params := mux.Vars(request)
 	instituicaoEnsino, err := service.GetByID(params["id"])
 	if err != nil {
-		respondWithError(w, http.StatusBadRequest, "ID da intituição é inválido!")
+		respondWithError(w, http.StatusBadRequest, "ID da instituição é inválido!")
 		return
 	}
 	respondWithJson(w, http.StatusOK, instituicaoEnsino)
