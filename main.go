@@ -10,9 +10,8 @@ import (
 	"github.com/gorilla/mux"
 )
 
-var conn = service.ServiceDb{}
-
 func init() {
+	conn := service.ServiceDb{}
 	conn.Connect()
 }
 
@@ -23,7 +22,7 @@ func main() {
 	r.HandleFunc("/api/v1/instituicoes/{id}", router.Update).Methods("PUT")
 	r.HandleFunc("/api/v1/instituicoes", router.GetAll).Methods("GET")
 	r.HandleFunc("/api/v1/instituicoes/{id}", router.GetByID).Methods("GET")
-	r.HandleFunc("/api/v1/instituicoes{id}", router.Delete).Methods("DELETE")
+	r.HandleFunc("/api/v1/instituicoes/{id}", router.Delete).Methods("DELETE")
 
 	port := ":3000"
 	fmt.Println("Running in port: ", port)
